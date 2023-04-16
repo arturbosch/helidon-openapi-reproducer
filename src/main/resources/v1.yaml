@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  description: Example project
+  title: helidon openapi reproducer
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: message
+paths:
+  /ok:
+    get:
+      operationId: ok
+      responses:
+        "200":
+          description: Ok
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    MetricDescriptor:
+      description: Numeric value representation for any information
+      properties:
+        value:
+          type: integer
+          format: int64
+        id:
+          type: string
+        displayName:
+          type: string
+        isFloat:
+          type: boolean
+          nullable: true
+        conversionRate:
+          type: integer
+          nullable: true
